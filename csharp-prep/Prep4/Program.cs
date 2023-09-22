@@ -14,6 +14,7 @@ class Program
         DisplayResult(userName, squaredNumber);
         \\ Example comment
         \\ Example comment 2
+        \\ Example comment 3
     }
 
     static void DisplayWelcomeMessage()
