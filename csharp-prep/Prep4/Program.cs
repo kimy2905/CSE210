@@ -12,9 +12,9 @@ class Program
         int squaredNumber = SquareNumber(userNumber);
 
         DisplayResult(userName, squaredNumber);
-        \\ Example comment
-        \\ Example comment 2
-        \\ Example comment 3
+        // Example comment
+        // Example comment 2
+        // Example comment 3
     }
 
     static void DisplayWelcomeMessage()
