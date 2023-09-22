@@ -13,6 +13,7 @@ class Program
 
         DisplayResult(userName, squaredNumber);
         \\ Example comment
+        \\ Example comment 2
     }
 
     static void DisplayWelcomeMessage()
