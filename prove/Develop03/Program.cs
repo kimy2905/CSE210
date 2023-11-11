@@ -15,7 +15,7 @@ class Program
         Console.WriteLine("Press any key to continue or type 'quit' to finish");
         string input = Console.ReadLine();
 
-        while (input != "quit")
+        while (scripture.notAllWordsHidden() == true && input != "quit")
         {  
             Console.Clear();
             scripture.hideWords();

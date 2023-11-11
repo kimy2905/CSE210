@@ -2,43 +2,43 @@ using System.ComponentModel;
 
 class Reference
 {
-    private string _book;
-    private int _chapter;
-    private int _verse;
-    private string _verses;
+    private string Book;
+    private int Chapter;
+    private int Verse;
+    private string Verses;
 
     public void setBook(string book)
     {
-        _book = book;
+        Book = book;
     }
 
     public void setChapter(int chapter)
     {
-        _chapter = chapter;
+        Chapter = chapter;
     }
 
     public void setVerse(int verse)
     {
-        _verse = verse;
+        Verse = verse;
     }
 
     public void setVerses(string verses)
     {
-        _verses = verses;
+        Verses = verses;
     }
 
     public string parseToString()
     {
         string parsedRef = "";
-        parsedRef = parsedRef + _book + " "; 
-        parsedRef = parsedRef + _chapter + ":";
-        if (_verses == "")
+        parsedRef = parsedRef + Book + " "; 
+        parsedRef = parsedRef + Chapter + ":";
+        if (Verses == "")
         {
-            parsedRef = parsedRef + _verse;
+            parsedRef = parsedRef + Verse;
         }
         else
         {
-            parsedRef = parsedRef + _verses;
+            parsedRef = parsedRef + Verses;
         }
         return parsedRef;
     }

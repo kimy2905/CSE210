@@ -1,7 +1,9 @@
 public class Entry{
-    private string _response;
-    private string _date;
-    private List<string> _prompts = new List<string>()
+    private string Response;
+
+    private string Prompt;
+    private string Date;
+    private List<string> Prompts = new List<string>()
     {
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
@@ -12,23 +14,39 @@ public class Entry{
 
     public void setResponse(string response)
     {
-        _response = response;
+        Response = response;
     }
 
     public void setDate(string date)
     {
-        _date = date;
+        Date = date;
     }
+
+    public void setPrompt(string prompt)
+    {
+        Prompt = prompt;
+    }
+
+    public string getPrompt()
+    {
+        return Prompt;
+    }
+    
+    public string getDate()
+    {
+        return Date;
+    }
+
     public string getRandomPrompt()
     {
         Random random = new Random();
-        int randInt = random.Next(0,_prompts.Count);
+        int randInt = random.Next(0,Prompts.Count);
         
-        return _prompts[randInt];
+        return Prompts[randInt];
     }
     public string getResponse()
     {
-        return _response;
+        return Response;
     }
 }
 

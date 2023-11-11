@@ -1,5 +1,5 @@
 public class Journal{
-    private List<Entry> _entries = new List<Entry>();
+    private List<Entry> Entries = new List<Entry>();
 
     public int displayMenu() {
         Console.WriteLine();
@@ -23,16 +23,14 @@ public class Journal{
     }
     
     public void addEntry(Entry entry) {
-        _entries.Add(entry);
+        Entries.Add(entry);
     }
 
     public void displayEntries()
     {
         Console.WriteLine("Journal:");
-        int counter = 1;
-        foreach (Entry entry in _entries){
-            Console.WriteLine($"{counter}. {entry.getResponse()}");
-            counter++;
+        foreach (Entry entry in Entries){
+            Console.WriteLine($"{entry.getDate()},{entry.getPrompt()},{entry.getResponse()}");
         }
     }
 
@@ -40,9 +38,10 @@ public class Journal{
     {
         using (StreamWriter outputfile = new StreamWriter(filename))
         {
-            foreach (Entry entry in _entries)
+            foreach (Entry entry in Entries)
             {
-                outputfile.WriteLine(entry.getResponse());
+
+                outputfile.WriteLine($"{entry.getDate()},{entry.getPrompt()},{entry.getResponse()}");
             }
         } 
     }
@@ -50,12 +49,16 @@ public class Journal{
     public void readFile(string filename)
     {
         string[] lines = System.IO.File.ReadAllLines(filename);
-
+        Entries.Clear();
         foreach (string line in lines)
         {
+            string[] pieces = line.Split(",");
+
             Entry entry = new Entry();
-            entry.setResponse(line);
-            _entries.Add(entry);
+            entry.setDate(pieces[0]);
+            entry.setPrompt(pieces[1]);
+            entry.setResponse(pieces[2]);
+            Entries.Add(entry);
         }
     }
 

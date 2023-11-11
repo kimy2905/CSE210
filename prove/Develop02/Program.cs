@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Transactions;
 
 class Program
 {
@@ -18,7 +19,9 @@ class Program
             {
                 Console.WriteLine();
                 Entry entry = new Entry();
-                Console.WriteLine(entry.getRandomPrompt());
+                string prompt = entry.getRandomPrompt();
+                entry.setPrompt(prompt);
+                Console.WriteLine(prompt);
                 string response = Console.ReadLine();
                 entry.setResponse(response);
 
