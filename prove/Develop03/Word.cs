@@ -1,38 +1,38 @@
 class Word 
 {
-    private string Letters;
-    private bool Status;
+    private string letters;
+    private bool status;
 
     public Word(string word)
     {
-        Letters = word;
-        Status = true;
+        letters = word;
+        status = true;
     }
     public void setWord(string word)
     {
-        Letters = word;
+        letters = word;
     }
 
     public string getWord()
     {
-        return Letters;
+        return letters;
     }
 
     public bool getStatus()
     {
-        return Status;
+        return status;
     }
 
     public void hideWord()
     {   
         string hiddenWord = "";
-        int counter = Letters.Length;
+        int counter = letters.Length;
         for (int i = 0; i < counter ; i++)
         {
             hiddenWord = hiddenWord + "_ ";
         }
-        Status = false;
-        Letters = hiddenWord;
+        status = false;
+        letters = hiddenWord;
     }
 
 
