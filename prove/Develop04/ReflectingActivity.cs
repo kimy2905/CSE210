@@ -1,12 +1,12 @@
 class ReflectingActivity : Activity
 {
-    private string[] _prompts = {
+    private string[] prompts = {
         "Recall a situation when you supported someone else.",
         "Recall a moment when you faced a significant challenge.",
         "Reflect on an instance when you provided assistance to someone in a time of need."
     };
     
-    private string[] _questions = {
+    private string[] questions = {
         "What made this experience hold significance for you?",
         "Were there previous instances in which you engaged in similar activities?",
         "What initiated your involvement in this endeavor?",
@@ -27,9 +27,9 @@ class ReflectingActivity : Activity
         Console.WriteLine("Consider the following prompt:");
 
         Random gen = new Random();
-        int index = gen.Next(0,_prompts.Length);
+        int index = gen.Next(0,prompts.Length);
         
-        Console.WriteLine($"--- {_prompts[index]} ---");
+        Console.WriteLine($"--- {prompts[index]} ---");
         Console.WriteLine("When you have something in mind, press enter to continue");
         Console.ReadLine();
         
@@ -38,8 +38,8 @@ class ReflectingActivity : Activity
         DateTime end = start.AddSeconds(duration);
         while (start < end)
         {
-            index = gen.Next(0,_questions.Length);
-            Console.WriteLine($"{_questions[index]}");
+            index = gen.Next(0,questions.Length);
+            Console.WriteLine($"{questions[index]}");
             displayAnimation();
             start = DateTime.Now;        
         }
@@ -47,6 +47,8 @@ class ReflectingActivity : Activity
         Console.WriteLine("Well done!\n");
         displayAnimation();
         Console.WriteLine($"You have completed {duration} seconds of the {name}");
+        timesCompleted++;
+        Console.WriteLine($"You have completed this activity {timesCompleted} times.");
         displayAnimation();
         Console.Clear();
     }

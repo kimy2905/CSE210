@@ -3,7 +3,7 @@ class Activity
     protected string description;
     protected string name;
     protected int duration;
-
+    protected int timesCompleted = 0;
     protected string[] animation = {"X","x"};
 
     public int menu()

@@ -48,7 +48,9 @@ class BreathingActivity : Activity
         
         Console.WriteLine("\nAwesome job!");
         displayAnimation();
+        timesCompleted ++;
         Console.WriteLine($"\nYou have completed {duration} seconds of the Breathing Activity.");
+        Console.WriteLine($"You have completed this activity {timesCompleted} times.");
         displayAnimation();
         Console.Clear();
     }

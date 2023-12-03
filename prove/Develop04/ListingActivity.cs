@@ -1,6 +1,6 @@
 class ListingActivity : Activity
 {
-    private string[] _prompts = {
+    private string[] prompts = {
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
         "Who are people that you have helped this week?"
@@ -20,8 +20,8 @@ class ListingActivity : Activity
 
         Console.WriteLine("List as many responses you can to the following prompt:");
         Random gen = new Random();
-        int index = gen.Next(0,_prompts.Length);
-        Console.WriteLine($" ---{_prompts[index]}--- ");
+        int index = gen.Next(0,prompts.Length);
+        Console.WriteLine($" ---{prompts[index]}--- ");
         Console.WriteLine("You may begin: ");
         Console.Write("3");
         Thread.Sleep(1000);
@@ -48,6 +48,8 @@ class ListingActivity : Activity
         displayAnimation();
         Console.WriteLine($"You listed {counter} items!");
         Console.WriteLine($"You have completed {duration} seconds {name}.");
+        timesCompleted++;
+        Console.WriteLine($"You have completed this activity {timesCompleted} times.");
         displayAnimation();
         Console.Clear();
     }
