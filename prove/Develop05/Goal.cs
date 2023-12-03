@@ -1,35 +1,35 @@
 class Goal
 {
-    protected int Points;
-    protected string Name;
-    protected string Description;
-    protected string Type;
+    protected int points;
+    protected string name;
+    protected string description;
+    protected string type;
 
     public Goal(string name, string description, int points)
     {
-        Name = name;
-        Description = description;
-        Points = points;
+        this.name = name;
+        this.description = description;
+        this.points = points;
     }
 
     public virtual void displayGoal()
     {
-        Console.WriteLine($"[ ] {Name} ({Description})");
+        Console.WriteLine($"[ ] {name} ({description})");
     }
 
     public virtual string formatGoal()
     {
-        return $"{Type},{Name},{Description},{Points}";
+        return $"{type},{name},{description},{points}";
     }
 
     public string getName()
     {
-        return Name;
+        return name;
     }
 
     public virtual int completeGoal()
     {
-        Console.WriteLine($"Congratulations! You have earned {Points} points!");
-        return Points;
+        Console.WriteLine($"Congratulations! You have earned {points} points!");
+        return points;
     }
 }

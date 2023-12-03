@@ -1,16 +1,16 @@
 class SimpleGoal : Goal
 {
-    private bool Completed;
+    private bool completed;
 
     public SimpleGoal(string name, string description, int points, bool completed = false) : base(name,description,points)
     {
-        Completed = completed;
+        this.completed = completed;
         Type = "Simple";
     }
 
     public override void displayGoal()
     {
-        if (Completed)
+        if (completed)
         {
             Console.WriteLine($"[X] {Name} ({Description})");
         }
@@ -22,13 +22,13 @@ class SimpleGoal : Goal
 
     public override string formatGoal()
     {
-        return $"{Type},{Name},{Description},{Points},{Completed}";
+        return $"{Type},{Name},{Description},{Points},{completed}";
     }
 
     public override int completeGoal()
     {
         Console.WriteLine($"Congratulations! You have earned {Points} points!");
-        Completed = true;
+        completed = true;
         return Points;
     }
 }

@@ -83,7 +83,7 @@ class Program
 
                 using (StreamWriter outputFile = new StreamWriter(filename))
                 {
-                    outputFile.WriteLine($"{totalPoints}");
+                    outputFile.WriteLine($"{totalPoints},{currentLevel}");
 
                     foreach (Goal goal in goals)
                     {

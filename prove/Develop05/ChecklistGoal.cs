@@ -1,37 +1,37 @@
 class ChecklistGoal : Goal
 {
-    private int Target;
-    private int Bonus;
-    private int Completed;
+    private int target;
+    private int bonus;
+    private int completed;
     public ChecklistGoal(string name, string description, int points, int target, int bonus, int completed = 0) : base(name,description,points)
     {
-        Target = target;
-        Bonus = bonus;
-        Completed = completed;
-        Type = "Checklist";
+        this.target = target;
+        this.bonus = bonus;
+        this.completed = completed;
+        this.type = "Checklist";
     }
 
     public override void displayGoal()
     {
-        if (Completed == Target)
+        if (completed == target)
         {
-            Console.WriteLine($"[X] {Name} ({Description}) -- Completed {Completed}/{Target}");
+            Console.WriteLine($"[X] {name} ({description}) -- Completed {completed}/{target}");
         }
         else
         {
-            Console.WriteLine($"[ ] {Name} ({Description}) -- Completed {Completed}/{Target}");
+            Console.WriteLine($"[ ] {name} ({description}) -- Completed {completed}/{target}");
         }
     }
 
     public override string formatGoal()
     {
-        return $"{Type},{Name},{Description},{Points},{Completed},{Target},{Bonus}";
+        return $"{type},{name},{description},{points},{completed},{target},{bonus}";
     }
 
     public override int completeGoal()
     {
-        Console.WriteLine($"Congratulations! You have earned {Points} points!");
-        Completed++;
-        return Points;
+        Console.WriteLine($"Congratulations! You have earned {points} points!");
+        completed++;
+        return points;
     }
 }
