@@ -1,15 +1,15 @@
 using System.Transactions;
 
 class Video{
-    private string Title;
-    private string Author;
-    private int Length;
+    private string title;
+    private string author;
+    private int length;
     private List<Comment> listOfComments = new List<Comment>();
 
     public Video(string title, string author, int length){
-        Title = title;
-        Author = author;
-        Length = length;
+        this.title = title;
+        this.author = author;
+        this.length = length;
     }
 
     public void addComment(Comment comment){
@@ -17,9 +17,9 @@ class Video{
     }
 
     public void display(){
-        Console.WriteLine($"Title: {Title}");
-        Console.WriteLine($"Author: {Author}");
-        Console.WriteLine($"Length: {Length}");
+        Console.WriteLine($"Title: {title}");
+        Console.WriteLine($"Author: {author}");
+        Console.WriteLine($"Length: {length}");
         Console.WriteLine($"Number of Comments: {listOfComments.Count}");
         Console.WriteLine("Comments:");
         int index = 1;

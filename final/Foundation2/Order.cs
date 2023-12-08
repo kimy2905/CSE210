@@ -1,16 +1,18 @@
 class Order{
     private List<Product> listOfProducts = new List<Product>();
-    private Customer Customer;
-    private int TotalCost;
-    private int ShippingCost;
+    private Customer customer;
+    private int totalCost;
+    private int shippingCost;
 
     public Order(Customer customer){
-        Customer = customer;
+        this.customer = customer;
 
-        if (Customer.fromUSA() == true){
-            ShippingCost = 5;
+        if (this.customer.fromUSA() == true){
+            shippingCost = 5;
         }
-        ShippingCost = 35;
+        else{
+            shippingCost = 35;
+        }
     }
 
     public void packingLabel(){
@@ -20,7 +22,7 @@ class Order{
     }
 
     public void shippingLabel(){
-        Console.WriteLine($"{Customer.getName()} - {Customer.getAddress()}");
+        Console.WriteLine($"{customer.getName()} - {customer.getAddress()}");
     }
 
     public void addProduct(Product product){
@@ -28,10 +30,10 @@ class Order{
     }
 
     public double getTotalPrice(){
-        double totalPrice = 0;
+        double totalCost = 0;
         foreach (Product product in listOfProducts){
-            totalPrice += product.getTotalPrice();
+            totalCost += product.getTotalPrice();
         }
-        return totalPrice;
+        return totalCost+shippingCost;
     }
 }

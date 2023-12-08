@@ -1,24 +1,24 @@
 class Customer{
-    private string Name;
-    private Address _Address;
+    private string name;
+    private Address address;
     public Customer(string name, Address address){
-        Name = name;
-        _Address = address;
+        this.name = name;
+        this.address = address;
     }
 
     public bool fromUSA(){
-        if (_Address.isUSA() == true){
+        if (this.address.isUSA() == true){
             return true;
         }
         return false;
     }
 
     public string getName(){
-        return Name;
+        return name;
     }
 
     public string getAddress(){
-        return _Address.getAddress();
+        return address.getAddress();
     }
 
 }

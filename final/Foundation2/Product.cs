@@ -1,27 +1,27 @@
 using System.Data.Common;
 
 class Product{
-    private string Name;
-    private int Id;
-    private double Price;
-    private int Quantity;
+    private string name;
+    private int id;
+    private double price;
+    private int quantity;
 
     public Product(string name, int id, double price, int quantity){
-        Name = name;
-        Id = id;
-        Price = price;
-        Quantity = quantity;
+        this.name = name;
+        this.id = id;
+        this.price = price;
+        this.quantity = quantity;
     }
 
     public double getTotalPrice(){
-        return Price * Quantity;
+        return price * quantity;
     }
 
     public string getName(){
-        return Name;
+        return name;
     }
 
     public int getId(){
-        return Id;
+        return id;
     }
 }

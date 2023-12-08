@@ -1,12 +1,12 @@
 class Comment{
-    private string Author;
-    private string Content;
+    private string author;
+    private string content;
     public Comment(string content, string author){
-        Author = author;
-        Content = content;
+        this.author = author;
+        this.content = content;
     }
 
     public string getComment(){
-        return Content;
+        return content;
     }
 }
