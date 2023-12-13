@@ -5,30 +5,30 @@ class SimpleGoal : Goal
     public SimpleGoal(string name, string description, int points, bool completed = false) : base(name,description,points)
     {
         this.completed = completed;
-        Type = "Simple";
+        type = "Simple";
     }
 
     public override void displayGoal()
     {
         if (completed)
         {
-            Console.WriteLine($"[X] {Name} ({Description})");
+            Console.WriteLine($"[X] {name} ({description})");
         }
         else
         {
-            Console.WriteLine($"[ ] {Name} ({Description})");
+            Console.WriteLine($"[ ] {name} ({description})");
         }
     }
 
     public override string formatGoal()
     {
-        return $"{Type},{Name},{Description},{Points},{completed}";
+        return $"{type},{name},{description},{points},{completed}";
     }
 
     public override int completeGoal()
     {
-        Console.WriteLine($"Congratulations! You have earned {Points} points!");
+        Console.WriteLine($"Congratulations! You have earned {points} points!");
         completed = true;
-        return Points;
+        return points;
     }
 }

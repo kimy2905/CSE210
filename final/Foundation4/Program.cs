@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         List<Activity> activities = new List<Activity>();
-        // Running 
+        // Running  
         Running running = new Running("12/22/23",30,2.5);
         activities.Add(running);
 
